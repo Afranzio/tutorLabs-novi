@@ -1,0 +1,28 @@
+Mysql setup to TutorLabs:
+	1) Create new schema ==> tutorlabs
+	2) Double click the schema and Highlight.
+	3) Open sql script == ctrl+shift+O
+		Open all sql file and run the script.
+
+Instruction to setup Django in LocalSpace:
+	1) Make sure you installed python | python2 | python3 & pip | pip3
+	2) Install Environment in Django Folder.
+		=> python -m venv env
+			=> env\scripts\activate
+	3) Install all dependencies.
+		=> pip install -r requirements.txt
+	4) If there is no requirements.txt file.
+		=> pip install [MODULE NAME]
+			=> pip install django django-widget_tweaks django-rest_framework mysqlclient
+	5) Setup all configuration of mysql to code.
+		=> tutor -> setting.py
+			=> schema name
+			=> user
+			=> password
+			=> host
+			=> port
+	6) Please run follow commands
+		=> env\scripts\activate
+		=> python manage.py makemigration
+		=> python manage.py migrate
+		=> python manage.py runserver

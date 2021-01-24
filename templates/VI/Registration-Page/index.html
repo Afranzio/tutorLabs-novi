@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"href="{%static '/css/register.css' %}">
+    <title>TutorLabs</title>
+</head>
+<body>
+    <nav>
+        <div class="logos">
+            <img class="logo" src="{%static '/Assest/Rectangle 24.png' %}" alt="" />
+            <div class="brand">
+                <img src="{%static '/Assest/O R K I N S T A.png' %}" alt="">
+                <img src="{%static '/Assest/WE BUILD ENTREPRENEURS.png' %}" alt="" />
+            </div>
+        </div>
+        </div>
+        <div class="label">
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>My Classes</a></li>
+                <li><a>Reports</a></li>
+                <li><a>Contact</a></li>
+                <li><img src="{%static '/Assest/generic-avatar 3.png' %}" alt="" /></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="left-side">
+            <!-- <img src="../Assest/profile.jpg" alt="" />-->
+            <h6 class="register">REGISTRATION</h6> 
+            <div class="center">
+                <h5>
+                    Let's get you Started...
+                </h5>
+                <h6>Fill your registration form and start your journey with us</h6>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="blue title">
+                <h4><strong>Register Free Account</strong></h4>
+                <h6>or use following methods</h6>
+            </div>
+            <form action="sndRegister">
+                <div class="flex-SB">
+                    <img src="{%static '/Assest/google-button.png' %}" alt="" />
+                    <img src="{%static '/Assest/facebook-button.png' %}" alt="" />
+                </div>
+                <div class="flex">
+                    <span>Already have an account? </span> <p><a href="/loginPage">Login</a></p>
+                </div>
+                <div class="form-inputs">
+                    <label for="Username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Jhon" />
+                </div>
+                <div class="form-inputs">
+                    <label for="email">Please enter a vaild email address</label>
+                    <input type="email" name="email" id="email" placeholder="Eg: jhon@xyz.com" />
+                </div>
+                <div class="form-inputs">
+                    <label for="OTP">OTP</label>
+                    <input type="text" name="otp" id="otp" placeholder="Eg: 123456" />
+                </div>
+                <div class="form-inputs">
+                    <label for="Username">Password</label>
+                    <input type="password" name="pwd" id="pwds" placeholder="Confrim Password" />
+                </div>
+                <div class="form-inputs">
+                    <label for="Username">Confrim Password</label>
+                    <input type="password" name="pwd" id="pwd" placeholder="Password" />
+                </div>
+                <div class="form-inputs">
+                    <label for="acc">Please select your account type</label>
+                    <div class="flex">
+                        <div class="flex">
+                            <input type="radio" value="1" name="type" id="accs"><h6>Student</h6>
+                        </div>
+                        <div class="flex">
+                            <input type="radio" value="2" name="type" id="acc"><h6>Tutor</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+            <p class="note">By registering you confrim that you accept the <a href="">Terms an Condition</a>  and <a href="">Privacy Policy</a> </p>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>Terms and Conditions</li>
+            <li>|</li>
+            <li>Privacy Policy</li>
+            <li>|</li>
+            <li>Help</li>
+            <li>|</li>
+            <li>TutorLabs Licenses</li>
+            <li>|</li>
+            <li>Partners</li>
+            <li>|</li>
+            <li class="flex">
+                <label for="Lang">Language</label>
+                <h4 id="Lang">English</h4>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

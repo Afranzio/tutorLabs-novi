@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="{%static '/css/home.css' %}">
+    <title>TutorLabs</title>
+</head>
+<body>
+    <nav>
+        <div class="logos">
+            <img class="logo" src="{%static '/Assest/Rectangle 24.png' %}" alt="" />
+            <div class="brand">
+                <img src="{%static '/Assest/O R K I N S T A.png' %}" alt="">
+                <img src="{%static '/Assest/WE BUILD ENTREPRENEURS.png' %}" alt="" />
+            </div>
+        </div>
+        </div>
+        <div class="label">
+            <ul>
+                <li><a>Home</a></li>
+                <li><a href="/list_tutor">My Classes</a></li>
+                <li><a>Reports</a></li>
+                <li><a>Contact</a></li>
+                <li><img src="{%static '/Assest/generic-avatar 3.png' %}" alt="" /></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main_container">
+        <div class="flex">
+            <div class="collection">
+                <ul>
+                    <li>
+                        <img src="{%static '/Assest/+.png' %}" class="plus" alt="" />
+                        CONNECT
+                    </li>
+                    <li>
+                        <img src="{%static '/Assest/+.png' %}" class="plus" alt="" />
+                        COLLABORATE
+                    </li>
+                    <li>
+                        <img src="{%static '/Assest/+.png' %}" class="plus" alt="" />
+                        CONVERGE
+                    </li>
+                </ul>
+                <p>Bring your IDEAS to live with us.</p>
+                <div class="free">
+                    <p>Signup for </p> <h5 class="blue"> Free </h5>
+                </div>
+                <div class="flex">
+                    <input type="button" value="Tutor" onClick ="window.location='/loginPage'" />
+                    <input type="button" value="Student" onClick ="window.location='/loginPage'" />
+                </div>
+            </div>
+            <div class="img">
+                <img src="{%static '/Assest/Rectangle 17.png' %}" alt="" srcset="">
+            </div>
+        </div>
+        <div class="member">
+            <div class="flex">
+                <div class="blue">
+                    <h4>2,28,490</h4>
+                    <h4>COMMUNITY  MEMBERS </h4>
+                </div>
+                <div class="blue">
+                    <h4>1,43,98,490</h4>
+                    <h4>TOTAL POSTED Classes</h4>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <h2>Let's stay in touch</h2>
+            <div class="flex">
+                <p>Keep me up to date with content, updates, offers from </p>
+                <h4 class="blue">TutorLabs</h4>
+            </div>
+            <div class="flex">
+                <div class="custom-file-upload">
+                    <input type="text" placeholder="Enter your email address" />
+                    <input type="button" value="Subscribe">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>Terms and Conditions</li>
+            <li>|</li>
+            <li>Privacy Policy</li>
+            <li>|</li>
+            <li>Help</li>
+            <li>|</li>
+            <li>TutorLabs Licenses</li>
+            <li>|</li>
+            <li>Partners</li>
+            <li>|</li>
+            <li class="flex">
+                <label for="Lang">Language</label>
+                <h4 id="Lang">English</h4>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+

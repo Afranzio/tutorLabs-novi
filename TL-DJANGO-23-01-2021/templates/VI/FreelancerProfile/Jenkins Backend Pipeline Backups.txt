@@ -1,0 +1,86 @@
+Backend-CI-Pipeline
+
+pipeline {
+    agent any
+
+    stages {
+        stage('git_check') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Afranzio/LambdaCDDemo.git'   
+            }
+		}
+		stage('Artifactory'){
+			steps {	
+				sh "cp -rf '/var/lib/jenkins/workspace/G-Serverless/Test-Pipeline' '/tmp/af/'"
+            }
+        }
+		stage('SAM-Build'){
+			steps {	
+
+					
+				    sh """
+                        export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+                        
+                        source '/tmp/env/bin/activate'
+                        
+                        cd '/tmp/af/Test-Pipeline'
+                        
+                        sam build
+                        
+                        sam package --template template.yaml --s3-bucket genex-react --output-template-file outputPackaged.yaml 
+                        
+                        deactivate
+                        
+					"""
+            }
+        }
+		stage('SAM-Validation'){
+			steps {	
+
+					
+				    sh """
+                        export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+                        
+                        source '/tmp/env/bin/activate'
+                        
+                        cd '/tmp/af/Test-Pipeline'
+                        
+                        sam validate --template template.yaml
+                        
+                        deactivate
+                        
+                    """
+            }
+        }
+    }
+}
+
+
+
+Backend-CD-Pipeline
+
+pipeline {
+    agent any
+    stages {
+		stage('SAM-Deploy'){
+			steps {	
+				    sh """
+                        export PATH=/usr/local/aws-cli/v2/2.0.57/bin:$PATH
+                        
+                        source '/tmp/env/bin/activate'
+                        
+                        cd '/tmp/af/Test-Pipeline'
+                        
+                        aws cloudformation delete-stack --stack-name 'sam-app'
+                        
+                        export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+                        
+                        yes | sam deploy --template-file ./template.yaml --stack-name sam-app --capabilities CAPABILITY_IAM --region us-east-2 --parameter-overrides IdentityNameParameter=xyz
+                       
+                        deactivate
+                        
+					"""
+            }
+        }
+	}
+}	

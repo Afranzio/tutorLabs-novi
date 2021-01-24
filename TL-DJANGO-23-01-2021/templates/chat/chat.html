@@ -1,0 +1,99 @@
+{% extends 'chat/index.html' %}
+{% block body %}
+<nav class="blue lighten-3">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Chat</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="">{{ request.user.username }}</a></li>
+     
+    </ul>
+    </div>
+</nav>
+
+
+<button onclick="ok()"> asd </button>
+<script>
+    function ok(){
+        document.getElementById("board").innerHTML = "";
+    }
+</script>
+    <div class="section" style="height: 80vh">
+    <div class="row">
+        <div class="col s3">
+        <div class="card">
+            <div class="collection">
+                {% for user in users %}
+<!--           <img src="https://frontend-1.adjust.com/new-assets/images/site-images/interface/user.svg" class="col s4">
+     -->
+                    <div class="col s8">
+                    
+                  <!--   <button> <span class="title" style="font-weight: bolder">{{ user.username }}</span>  </button>    
+                    -->
+                        <form action="chat">
+                        <input name="receiver" type="hidden" value="{{user.id}}" > 
+                        <input type="submit" value="{{user.username}}">
+                        
+                      </form>
+
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+        
+        <div class="col s9">
+         <div class="card">
+          <div id="board" class="section grey lighten-3" style="height: 68vh; padding: 5px; overflow-y: scroll">
+             {% block messages %}
+         {% endblock %}
+            </div>
+            <form id="chat-box" class="form-group" method="post">
+                {% csrf_token %}
+                
+
+                <div class="row">
+                    <div class="col s11">
+                        <div class="input-field">
+                            <input id="id_message" name="message" type="text" placeholder="Type your message..">
+                        </div>
+                    </div>
+                    <div class="col s1" style="line-height: 80px">
+                        <button class="btn btn-floating blue lighten-2 waves-effect waves-light"><i class="material-icons">send</i></button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% load static %}
+    <script>
+         var token = '{{csrf_token}}';
+
+        // For receiving, set global variables to be used by the 'receive' function
+        sender_id = "{{ receiver.id }}"; //Context variable for receiver
+        receiver_id = "{{sender}} , {{receiver}}"; //Context variable for current logged in user
+        //For sending
+        $(function () {
+            scrolltoend(); // Function to show the latest message, which is at the bottom of the message box, by scrolling to the end
+            //Handling the submit event to send the message.
+            $('#chat-box').on('submit', function (event) {
+                event.preventDefault();
+                var message = $('#id_message');
+                send({{sender}}, {{receiver}}, message.val()); //Send function will be defined within 'chat.js'
+                message.val(''); //Clear content of the the input field after sending
+            })
+        })
+
+        receive({{sender}} , {{receiver}} , 0 )  ;
+
+        window.setInterval(function(data){
+  /// call your function here
+
+  receive({{sender}} , {{receiver}} , 1) ;
+}, 5000);
+
+
+    </script>
+{% endblock %}

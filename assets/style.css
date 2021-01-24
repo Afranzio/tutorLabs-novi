@@ -1,0 +1,390 @@
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+.topnav {
+
+    overflow: hidden;
+    background-color: #0D3451;
+  }
+  
+  .topnav a {
+    
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+
+  #fname {
+      width: 50% ;
+      max-width: 500px;
+      /* top-left | top-right | bottom-right | bottom-left 
+      border-radius: 2px 2px 2px 2px ; */
+      border-radius: 25px;
+      border-color: lavender;
+      min-height: 30px ;
+  }
+
+  #fname:hover{
+      width: 53% ; 
+  }
+
+
+ #search {
+    border-radius: 25px;
+    width: 100px  ; 
+    
+    min-height: 30px ;
+  }
+
+
+  
+  .list ul {
+    font-size: 13px;
+    list-style: none;
+    margin: 0 0 0 -0.8125em;
+    padding-left: 0;
+}
+  .list li {
+    position: relative;
+    padding-left: 11px;
+}
+
+.column {
+    margin: 10px; /* or what ever */
+  }
+
+#card {
+    padding-top: 10px ;
+    background-color: lightcyan;
+    padding-bottom: 10px ;
+}
+  
+#spaceocc {
+    height: 20px ;
+
+}
+
+#thefilterform {
+
+    background-color: lightcyan;
+
+    display: none ; 
+
+}
+
+
+
+.filterhead {
+    color: blue ; 
+    
+    
+}
+
+
+#sidepart {
+    height: 60% ;  
+    background-color: #c3e3f6;
+    padding-left : 10px ; 
+    margin-left : 50px ; 
+    margin-right : 50px ; 
+
+
+
+}
+
+
+
+#filterarea {
+  background-color: lightcyan;
+  margin:10px;
+  padding:10px; 
+  display:none ; 
+
+}
+
+.filterarea-responsive {
+  height:0px; 
+  outline: hide ;
+}
+
+#searchbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    
+    
+}
+
+#stickypart{
+
+    margin-bottom: 15px;   position: -webkit-sticky;
+          position: sticky;
+          top: 0px;
+        z-index : 1 ;
+        background-color: white ; 
+
+        
+}
+
+
+/*desigining the card */
+
+.cards {
+  background-color: #c3e3f6;
+
+  margin-top: 100px ;
+}
+
+.card-img {
+  border-radius: 50% ;
+  margin-top:20px ;
+
+}
+
+.card-name {
+  color: black ; 
+
+}
+
+.card-description {
+  color:rgb(117, 117, 117) ;
+}
+
+.card-skill {
+  color:black  ;
+  text-align: center;
+  float: left  ;
+  padding-bottom: 5px ; 
+  padding-top: 10px ; 
+  padding-right: 10px ; 
+  
+  
+
+}
+
+.card-skillset {
+  background-color: rgb(102, 100, 100);
+  text-align: center;
+  float: left  ;
+  padding-left: 10px ;
+  padding-bottom: 5px ; 
+  padding-top: 10px ; 
+  padding-right: 10px ; 
+  margin-left:30px ; 
+  
+} 
+
+.card-skillsetblank {
+  text-align: center;
+  float: left  ;
+  padding-left: 10px ;
+  padding-bottom: 5px ; 
+  padding-top: 10px ; 
+  padding-right: 10px ; 
+  width: 10px ; 
+  height: 100px ; 
+
+}
+
+.card-detail {
+  font-size: 18px;
+  margin-left:60px ;
+}
+
+
+
+
+.card-desi{
+  display: inline;
+  
+}
+
+  
+
+
+
+
+.padding-0{
+  padding-right:0;
+  padding-left:0;
+}
+
+.card-inside{
+  position:relative ;
+  left : 0px ; 
+  
+  margin-left : 0x ; 
+}
+
+.container .body-container{
+  padding:0px ;
+
+} 
+
+.spaceoc {
+  width: 10px; 
+
+}
+
+ul#skilllist li {
+  display:inline;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  ul#skilllist li {
+    display:block;
+  }
+  
+
+}
+
+#skilllist {
+  padding-right:0px ; 
+  margin-right: 0px ;
+}
+
+ul {
+      list-style: none;
+}
+
+ul#card-lowerbar li{
+  display: inline ; 
+  padding-right : 50px ;
+  margin-left: 0px ;
+  font-size: large ;
+}
+
+.asc {
+
+  float: right  !important   ;
+  
+  }
+  .bsc{
+    float: left;
+  }
+  
+  @media screen and (max-width: 600px) {
+   
+    .bsc{
+      float: none ;
+    }
+    .asc {
+  
+  float: none  !important   ;
+  
+  }
+
+  ul#card-lowerbar li{
+    display: none ; 
+    padding-right : 50px ;
+    margin-left: 0px ;
+    font-size: large ;
+  }
+
+
+  
+  
+  }
+    

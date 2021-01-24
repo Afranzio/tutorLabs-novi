@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="{%static '/css/profile1.css' %}">
+    <title>TutorLabs</title>
+</head>
+<body>
+    <nav>
+        <div class="logos">
+            <img class="logo" src="{%static '/Assest/Rectangle 24.png' %}" alt="" />
+            <div class="brand">
+                <img src="{%static '/Assest/O R K I N S T A.png' %}" alt="">
+                <img src="{%static '/Assest/WE BUILD ENTREPRENEURS.png' %}" alt="" />
+            </div>
+        </div>
+        </div>
+        <div class="label">
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>My Classes</a></li>
+                <li><a>Reports</a></li>
+                <li><a>Contact</a></li>
+                <li><img src="{%static '/Assest/generic-avatar 3.png' %}" alt="" /></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="left-side">
+            <img src="{%static '/Assest/profile.jpg' %}" alt="" />
+            <h6 class="upload">upload</h6>
+            <div class="center">
+                <h6>
+                    Upload profile for more Students to see your profile
+                </h6>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="blue title">
+                <h4><strong>PROFILE</strong></h4>
+            </div>
+            <form action="create_profile_two">
+                <div class="flex">
+                    <div class="form-left">
+                        <div class="form-inputs">
+                            <label for="Position">Current Position</label>
+                            <input type="text" name="currentPosition" id="Position" placeholder="Your Position" />
+                        </div>
+                        <div class="form-inputs">
+                            <label for="Language">Language</label>
+                            <select type="text" name="language" id="Language" placeholder="Select Language">
+                                <option value="english" >Select Languages</option>
+                                <option value="english">English</option>
+                                <option value="tamil">Tamil</option>
+                                <option value="hindi">Hindi</option>
+                                <option value="telugu">Telugu</option>
+                            </select>
+                        </div>                
+                        <div class="form-inputs">
+                            <label for="Certifications">Certifications</label>
+                            <input type="text" name="certifications" id="Certifications" placeholder="Enter Your Certifications" />
+                        </div>                
+                        <div class="form-inputs">
+                            <label for="Resume">Upload Resume</label>
+                            <!-- <input type="text" id="Resume" placeholder="Resume" />
+                            <input type="file" name="Resume" id="Resume" placeholder="Upload Resume"> -->
+                            <label class="custom-file-upload">
+                                <input type="file" name="Browser" id="browse" value="Browse" />
+                                    Upload File
+                                    <input type="button" value="Browse" />
+                                </input>
+                            </label>
+                            <h6>Note: xls,Pdf,Doc,Docx</h6>
+                        </div>
+                    </div>
+                    <div class="form-right">
+                        <div class="form-inputs">
+                            <label for="Link">Portfolio Link</label>
+                            <input type="text" name="portfolio" id="Link" placeholder="Link" />
+                        </div>
+                        <div class="form-inputs">
+                            <label for="Hours/Weeks">Hours/Weeks</label>
+                            <input type="text" name="hrs" id="Hours/Weeks" placeholder="Hours/Weeks" />
+                        </div>                
+                        <div class="form-inputs">
+                            <label for="Bio">Bio</label>
+                            <!-- <textarea type="text" class="bio" id="Bio" placeholder="Short Description">Short Description</textarea> -->
+                            <textarea name="bio" id="" cols="30" rows="7"></textarea>
+                        </div>                
+                    </div>
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Save & Next" />
+                    <input type="button" value="Cancel" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>Terms and Conditions</li>
+            <li>|</li>
+            <li>Privacy Policy</li>
+            <li>|</li>
+            <li>Help</li>
+            <li>|</li>
+            <li>TutorLabs Licenses</li>
+            <li>|</li>
+            <li>Partners</li>
+            <li>|</li>
+            <li class="flex">
+                <label for="Lang">Language</label>
+                <h4 id="Lang">English</h4>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

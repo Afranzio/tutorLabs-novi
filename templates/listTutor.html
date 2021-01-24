@@ -1,0 +1,37 @@
+{% load static %}
+
+<div>
+    {% for i in se%}
+        <div>
+            <form action="invite_tutorForm" >
+                <h5>{{i.username}}</h5>
+                <p>{{i.email_id}}</p>
+                <input type="submit" value="invite" />
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+<div>
+    {% for i in invited %}
+        <div>
+            <form >
+                <h5>{{i.teacher_id}}</h5>
+                <p>{{i.connect_id}}, {{i.proposal_msg}}, {{i.connect_rate}}
+                <input type="button" onClick="convtApprove({{i.teacher_id}})" value="Approve" />
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+
+<script> 
+    function convtinvite(x){
+        var z = Math.floor(x); 
+        window.location=`invite_tutorForm/${z}`
+    }
+  function convtApprove(x){
+    var z = Math.floor(x); 
+    window.location=`approve_tutorForm/${z}`
+  }
+</script> 

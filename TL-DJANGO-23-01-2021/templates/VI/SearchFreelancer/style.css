@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Nav Bar */
+
+.logos{
+    margin-left: 1em;
+    display: flex;
+}
+
+.logo{
+    width: 2em;
+    align-self: center;
+    height: 2.4em;
+}
+
+.brand{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    width: 100%;
+    height: 61px;
+    left: 0px;
+    top: 0px;
+    background: #0D3451;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label ul{
+    display: flex;
+    list-style-type: None;
+}
+
+.label ul li{
+    color: #FFFF;
+    font-size: 0.7em;
+    margin: 0.5em;
+    align-self: center;
+}
+
+.search-btn{
+    width: 30px;
+    height: 30px;
+}
+
+/* Container */
+
+.main-container{
+    border: #E0DEDE;
+    /* display: flex; */
+    width: 60vw;
+    margin-left: 20vw;
+    margin-top: 4vh;
+    justify-content: center;
+    border: 1px solid #E0DEDE;
+}
+
+.left-side{
+    text-align: left;
+    width: 20vw;
+    background: #E2EDFF;
+    /* text-align: center; */
+}
+
+.Feed h4{
+    text-align: left;
+}
+
+.list-1{
+    margin-top: 1em;
+    padding-top: 0.5em;
+    background-color: #E2EDFF; 
+    border: 1px solid#c4c4c4;
+    width: 100%;
+}
+
+.list-1 img{
+    margin: 0.5em;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.list{
+    list-style-type: none;
+    font-size: 0.7em;
+}
+
+.tags{
+    list-style-type: none;
+    font-size: 0.5em;
+    display: flex;
+    margin-left: 0.5em;
+}
+
+.tags li{
+    margin: 0 0.5em;
+    background-color: #c4c4c4;
+    padding: 0.2em 0.5em;
+    border-radius: 2px;
+}
+
+.profile{
+    width:70px;
+    margin: 0.5em 0 0 0.5em;
+    border-radius: 50%;
+}
+
+.stars{
+    margin-left: 0.5em;
+}
+
+.stars img{
+    margin: 0;
+    padding: 0;
+}
+
+.search{
+    justify-content: center;
+}
+
+.search h4{
+    align-self: center;
+}
+
+.center{
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+
+.center ul{
+    font-size: 0.7em;
+}
+
+.feed{
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    color: #0D3451;
+}
+
+.left-side img{
+    margin-top: 2vh;
+    width: 10vw;
+    border-radius: 50%;
+}
+
+.right-side{
+    padding-left:2em;
+    padding-right:2em;
+    width: 50vw;
+}
+
+.stars img{
+    width: 13px;
+}
+
+.rate{
+    align-self: center;
+}
+
+.right{
+    margin-top: 0.5em;
+    text-align: left;
+    height: 20vh;
+    margin-left: 1em;
+}
+
+.rig{
+    text-align: left;
+}
+
+.blue{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: #0D3451;
+}
+
+.myFeed{
+    color: #0D3451;
+    font-size: 0.9em;
+    text-align: left;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.name{
+    border-bottom: gray;
+}
+
+.rating{
+    margin-top: -10vh;
+}
+
+.flex{
+    text-align: center;
+    display: flex;
+}
+
+.flex span, .flex p{
+    font-size: 0.6em;
+}
+
+.flex span{
+    align-self: center;
+    margin-right: 0.5em;
+}
+
+.flex-center{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+li{
+    list-style: none;
+}
+
+.flex-center h4{
+    align-self: center;
+}
+
+.bottom h6{
+    margin: 0 0.5em;
+}
+
+.bottom h6, .bottom p{
+    align-self: center;
+}
+
+input[type="text"]{
+    border: 1px solid #787373;
+    border-radius: 2px;
+    margin-top: 0.5em;
+    padding: 0.5em 0em 0.5em 0.5em;
+    width: 20vw;
+}
+
+input[type="button"]:focus{
+    outline: none;
+}
+
+input[type="button"]:hover{
+    cursor: pointer;
+}
+
+input[type = "text"]:focus{
+    border: none;
+    outline: 2px solid #F67A06;
+}
+
+
+/* footer */
+
+.footer{ 
+    width: 100%;
+    height: 44px;
+    left: 0px;
+    bottom: 0px;
+
+    margin-top: 5vh;
+    /* margin-top: 96vh; */
+
+    background: #F3F3F3;
+    
+}
+
+.footer ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 0.5em;
+    margin-left: 50vw;
+}
+
+.footer ul li{
+    margin: 1em 0.5em;
+}
+
+.flex h4{
+    margin-left: 0.5em;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    margin-top: 0.5em;
+    border: 1px solid #787373;
+    cursor: pointer;
+    text-align: end;
+}
+
+.custom-file-upload input[type=button]{
+    padding-right: 1em;
+    margin: 0;
+    width: 6em;
+    border: none;
+    background-color: #C4C4C4;
+}
+
+.form-inputs h6{
+    color: #787373;
+}

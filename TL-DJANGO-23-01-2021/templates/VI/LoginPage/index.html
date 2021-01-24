@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="{%static '/css/login.css' %}">
+    <title>TutorLabs</title>
+</head>
+<body>
+    <nav>
+        <div class="logos">
+            <img class="logo" src="{%static '/Assest/Rectangle 24.png' %}" alt="" />
+            <div class="brand">
+                <img src="{%static '/Assest/O R K I N S T A.png' %}" alt="">
+                <img src="{%static '/Assest/WE BUILD ENTREPRENEURS.png' %}" alt="" />
+            </div>
+        </div>
+        </div>
+        <div class="label">
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>My Classes</a></li>
+                <li><a>Reports</a></li>
+                <li><a>Contact</a></li>
+                <li><img src="{%static '/Assest/generic-avatar 3.png' %}" alt="" /></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="left-side">
+            <!-- <img src="../Assest/profile.jpg" alt="" />-->
+            <h6 class="register">Login</h6> 
+            <div class="center">
+                <h5>
+                    Let's get you Working...
+                </h5>
+                <h6>Please login to start working</h6>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="blue title">
+                <h4><strong>Login</strong></h4>
+                <h6>or use following methods</h6>
+            </div>
+            <form action="login">
+                <div class="flex-SB">
+                    <img src="{%static '/Assest/google-button.png' %}" alt="" />
+                    <img src="{%static '/Assest/facebook-button.png' %}" alt="" />
+                </div>
+                <div class="flex check">
+                    <span>New to </span> <span class="blue">TutorLabs ?</span> <p><a href="/sendOtp">Register</a></p>
+                </div>
+                <div class="form-inputs">
+                    <input type="text" name="email" id="email" placeholder="Username" />
+                </div>
+                <div class="form-inputs">
+                    <input type="password" name="pwd" id="pwd" placeholder="Password" />
+                </div>
+                <a href="#" class="blue forgot">Forgot Password ?</a>
+                <div class="buttons">
+                    <input type="submit" value="Login" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>Terms and Conditions</li>
+            <li>|</li>
+            <li>Privacy Policy</li>
+            <li>|</li>
+            <li>Help</li>
+            <li>|</li>
+            <li>TutorLabs Licenses</li>
+            <li>|</li>
+            <li>Partners</li>
+            <li>|</li>
+            <li class="flex">
+                <label for="Lang">Language</label>
+                <h4 id="Lang">English</h4>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

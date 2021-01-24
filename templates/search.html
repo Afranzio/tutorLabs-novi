@@ -1,0 +1,407 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{%static 'style.css' %}" media="screen"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<!-- onresize="resize_cont()" -->
+
+<body onresize="resize_cont()" >
+    <div class="topnav" id="myTopnav">
+    <a href="javascript:void(0);" id="butt" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="/" class="bsc"  >TutorLabs.com</a>
+      <a href="#"  class="asc" ><img width=50 height=50 style="  border-radius: 50% ;"  src="{% static 'download.jpg' %}">       </a>
+  
+      <a href="#" class="asc" >Dashboard</a>
+      <a href="/myTutors" class="asc" >My Tutors</a>
+      <a href="#" class="asc" >Reports </a>
+      <a href="#" class="asc" >Messages</a>
+  
+    </div>
+  
+  <div>
+    <div id="mySidebar" class="sidebar">
+      <div class="container"> 
+        <h2> Get Your Work Done</h2>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div id="sidepart" >
+        <br> 
+        <ul>
+          <li><h4> MY Feed</h4></li>
+          <li><h4> Recommended</h4></li>
+        </ul>
+        <br>
+        <ul>
+          <li> <h4> Skills I need</h4> </li>
+          <li> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a></li>
+          <li> 
+            <button type="submit" form="search_bar" name="section" style="background-color: inherit ; border: none;   outline: none;"  value="Webdesign"> Webdesign </button> 
+          </li>
+
+          <li> 
+            <button type="submit" form="search_bar" name="section" style="background-color: inherit ; border: none;   outline: none;"  value="Coding"> Coding </button>
+          </li>
+
+          <li> 
+            <button type="submit" form="search_bar" name="section" style="background-color: inherit ; border: none;   outline: none;"  value="Android">Android</button>
+          </li>
+
+          <li> 
+            <button type="submit" form="search_bar" name="section" style="background-color: inherit ; border: none;   outline: none;"  value="Marketing">Marketing </button>
+          </li>
+
+
+        </ul>
+        
+      </div>
+      </div> 
+      <div id="main">
+          <div id="stickypart"> 
+          <br>
+          
+
+          <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+      
+          <div id="spaceocc"> </div>
+            {{ type }}
+      
+          <div id="searchbar" > 
+      
+            <form class="form-inline" id="search_bar" action="search">
+      
+              <input type="text" id="fname" class="form-control" name="fname" value="{{inputs.search_bar}}">
+              <input type="hidden" form="search_bar_page" id="fname" class="form-control" name="fname" value="{{inputs.search_bar}}">
+      
+              <input type="submit" class="btn btn-default" id="search"> 
+              <input type="hidden" name="user_id" value="11"> 
+              <input type="hidden" form="search_bar_page" name="user_id" value="11">
+              <div id="filterarea" class="filterarea">
+                    <div class="row" >
+                      <div class="col-sm-2"> 
+                        <h4 class="filterhead">  Hourly rate </h4>
+                        <div>
+                          <input type="checkbox" style="display: none;" {% if inputs.hourlyrate1 %}  form="search_bar_page" type="checkbox" name="hourlyrate1"  checked {% endif %} >
+                          <input type="checkbox" name="hourlyrate1" {% if inputs.hourlyrate1 %} checked  {% endif %} >
+                          <label>  > $5 </label>
+                        </div>                        
+                        <div>
+                          <input type="checkbox" style="display: none;"  {% if inputs.hourlyrate2 %} form="search_bar_page" type="checkbox" name="hourlyrate2" checked   {% endif %} >
+                          <input type="checkbox" name="hourlyrate2" {% if inputs.hourlyrate2 %} checked  {% endif %} >
+                          <label>  $5 -$10 </label>
+                        </div>                        
+                        <div>
+                          <input type="checkbox" style="display: none;"  {% if inputs.hourlyrate3 %}   form="search_bar_page" type="checkbox" name="hourlyrate3" checked  {% endif %}>
+                          <input type="checkbox" name="hourlyrate3" {% if inputs.hourlyrate3 %} checked  {% endif %}>
+                          <label>   $10 - $100 </label>
+                        </div>                        
+                        <div>
+                          <input type="checkbox"  style="display: none;"  {% if inputs.hourlyrate4 %}  form="search_bar_page" type="checkbox" name="hourlyrate4" checked {% endif %}>
+                          <input type="checkbox" name="hourlyrate4" {% if inputs.hourlyrate4 %} checked  {% endif %}>
+                          <label>  $100< </label>
+                        </div>                        
+                      </div>
+                      <div class="col"> </div>
+                      <div class="col-sm-2"> 
+                        <h4 class="filterhead">  Talent </h4>
+                        <div>
+                          <input type="checkbox"  style="display: none;" {% if inputs.Beginner %} form="search_bar_page" type="checkbox" name="Beginner"  value="on"  checked{% endif %}>
+                          <input type="checkbox" name="Beginner" value="ok" {% if inputs.Beginner %} checked  {% endif %}>
+                          <label>  > Beginner</label>
+                        </div>                        
+                        <div>
+                          <input type="checkbox" style="display: none;"  {% if inputs.Intermediate %}  form="search_bar_page" type="checkbox" name="Intermediate" checked    {% endif %}>
+                          <input type="checkbox" name="Intermediate" value="ok" {% if inputs.Intermediate %} checked  {% endif %}>
+                          <label>  Intermediate </label>
+                        </div>                        
+                        <div>
+                          <input type="checkbox" style="display: none;"  {% if inputs.Expert %}  form="search_bar_page" type="checkbox" name="Expert" value="ok"  checked {% endif %}>
+                          <input type="checkbox" name="Expert" value="ok" {% if inputs.Expert %} checked  {% endif %}>
+                          <label>   Expert </label>
+                        </div>                        
+                        <div>
+                          <input type="checkbox" style="display: none;" {% if inputs.Super_Expert %}  form="search_bar_page" type="checkbox" name="Super Expert" value="ok" checked  {% endif %}>
+                          <input type="checkbox" name="Super Expert" value="ok" {% if inputs.Super_Expert %} checked  {% endif %}>
+                          <label>  Super Expert </label>
+                        </div>                                    
+                      </div>
+                      <div class="col"> </div>
+                      <div class="col-sm-2" style="width:200px; "> 
+                        <h4 class="filterhead">  Locations </h4>
+                        <input type="hidden" form="search_bar_page" list="brow" name="location" value="{{inputs.location}}">
+                        <input list="brow" name="location" value="{{inputs.location}}">
+                        <datalist id="brow">
+                          
+                        {% for i in  locations  %}
+                          <option value={{ i.country }}>
+                        {% endfor %}
+
+                          </datalist>  
+                        </div>
+                        <div class="col"> </div>
+                        <div class="col-sm-2" style="width:200px;"> 
+                          <h4 class="filterhead">  Language </h4>
+                          <input type="hidden" form="search_bar_page" list="lan" name="language" value="{{inputs.language}}">
+                          <input list="lan" name="language" value="{{inputs.language}}">
+                          <datalist id="lan">
+
+                            {% for i in  language_list_ht  %}
+                              <option value={{ i.language }}>
+                            {% endfor %}
+
+                            </datalist>  
+                          </div>
+                        </div> 
+      
+              </div>
+            </form>
+            <button class="btn btn-default" onclick="addfilter()"> ☰ Filter</button>
+          </div>
+          <br>
+          <div id="heading" class="container-fluid"> 
+            <h3> My feeds </h3>
+          </div>
+        </div> 
+          <div class="container-fluid"></div>  
+          <div id="results" class="container-fluid">
+
+            <div id="maincontent">
+              <div class="container">
+
+              </div>
+              <!-- design of a card -->
+            
+               {% for  i in se %}
+              <div class="cards">
+                <div class="card-inside">
+                  <div class="container-fluid pt-16">
+
+                    <ul class="card-desi">
+                      <li>
+                      <div > 
+                        <img width=100 height=100 class="card-img"  src="{% static 'download.jpg' %}"> 
+                      </div>
+                      </li>
+                      <li>
+                        <div class="container-fluid"><!-- content -->
+                          <h2 class="card-name"> <strong> {{ i.first_name }}  {{ i.last_name }} </strong> </h2>
+                          <hr>
+                          <h4 class="card-description"> {{ i.position  }}   </h4>
+                          <div class="container-fluid">
+                            <form action="chat">
+                              <input name="receiver" type="hidden" value="{{i.user_id}}" > 
+                              <input type="submit" value="chat">
+                            </form>
+                            {{i.user_id }}
+
+                            <div class="container-fluid">
+                              <ul id="skilllist">
+                                <li> <h4 class="card-skill"> Skill: </h4></li>
+                                {% for ski in i.skill.skills %}
+                                  <li> <h4 class="card-skillset"> {{ ski }}</h4></li>
+                                {% endfor  %}                    
+                              </ul>
+                            </div>
+                            <p class="card-detail"> {{ i.experience }} <br> {{ i.mobile_number }} </p>
+                          <div class="container-fluid"> 
+                            <ul id="card-lowerbar"> 
+                              <li> Rating </li>
+                              <li> <strong> ***** </strong></li>
+                              <li> {{ i.hours_per_week }}  </li>
+                              <li> $50 </li>
+                              <li> Earned </li>
+                              <li> <p> {{ i.state}} , {{ i.country }} </p> </li>
+                            </ul>
+                         </div>
+                        </div>
+                      </div>
+                      </li>
+                    </ul>
+                    <div class="row">
+                      <div class="col-sm-2"></div>
+                      <div class="col"></div>
+                  </div>
+                  <br>                 
+                </div>
+                <br>
+              </div>
+            </div>
+                {% endfor %}
+
+
+
+          </div>     
+
+<div class="container">
+
+
+  {% if inputs.prepage %}
+
+
+  <input form="search_bar_page" class="btn btn-primary" name="page" value="{{inputs.prepage}}" type="submit" style="float: left;">   
+  
+{% endif %}
+
+
+{% if inputs.nextpage %}
+
+  <input form="search_bar_page" class="btn btn-primary" name="page" value="{{inputs.nextpage}}" type="submit" style="float: right;"> 
+
+{% endif %}
+
+{%  if inputs.section %}
+
+<input type="hidden" form="search_bar_page" name="section"  value="{{inputs.section}}">
+{% endif %}
+
+<form id="search_bar_page" action="search">
+
+</form>
+
+
+</div>
+</div>
+
+
+
+</div>
+  </div> 
+
+<script>
+
+
+ // set the screen
+var sets = 0 ; 
+
+resize_cont() ; 
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "300px";
+  document.getElementById("main").style.marginLeft = "300px";
+  sets = 1 ; 
+  resize_cont() ; 
+  
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  sets = 0 ; 
+  resize_cont() ; 
+  
+}
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+    
+  } else {
+    x.className = "topnav"; 
+  }
+}
+
+
+function resize_cont() {
+
+  if(sets == 1 )
+  {
+
+     // get the window size 
+console.log(screen.width) ; 
+
+
+
+var widths = parseInt ( screen.width , 10 )  ;
+
+var ele = parseInt( "400px",10);
+
+console.log(widths) ; 
+console.log(ele) ; 
+
+if( widths < 2* ele   )
+{
+document.getElementById("main").style.display = "none" ; 
+
+
+}else 
+{
+document.getElementById("main").style.display = "block" ; 
+
+
+}
+
+
+  }else 
+  {
+
+    document.getElementById("main").style.display = "block" ; 
+
+
+  }
+/*
+  var widths = parseInt ( screen.width , 10 )  ;
+  var ele = parseInt( "600px",10);
+  if( widths > ele   )
+  {
+    document.getElementById("ok5").style.float = "right"  ;
+    document.getElementById("ok4").style.float = "right"  ;
+    document.getElementById("ok3").style.float = "right"  ;
+    document.getElementById("ok2").style.float = "right"  ;
+    document.getElementById("ok1").style.float = "left"  ; 
+    
+
+  }
+  else
+  {
+    
+    document.getElementById("ok1").style.float = "none"  ; 
+    document.getElementById("ok2").style.float = "none"  ; 
+    document.getElementById("ok3").style.float = "none"  ; 
+    document.getElementById("ok4").style.float = "none"  ; 
+    document.getElementById("ok5").style.float = "none"  ; 
+
+  }
+  */
+}
+
+
+function addfilter() {
+
+  if( document.getElementById("filterarea").style.display == "block" )
+{
+
+  document.getElementById("filterarea").style.display = "none" ; 
+}else 
+{
+
+  document.getElementById("filterarea").style.display = "block" ; 
+}
+
+
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html> 
